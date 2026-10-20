@@ -142,14 +142,14 @@ class TechDetector(BaseTool):
     def _should_skip_file(filepath: str) -> bool:
         """Check whether a file is inside an excluded directory."""
         skip_directories = {
-    "node_modules",
-    "vendor",
-    "dist",
-    "build",
-    ".git",
-    "__pycache__",
-    ".venv",
-    "venv",
-}
+            "node_modules",
+            "vendor",
+            "dist",
+            "build",
+            ".git",
+            "__pycache__",
+            ".venv",
+            "venv",
+        }
         directory_parts = filepath.replace(chr(92), "/").split("/")[:-1]
         return any(part in skip_directories for part in directory_parts)
